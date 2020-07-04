@@ -9,7 +9,7 @@ def main():
         print(f"sorry, {sys.argv[0]} dorsn't have enought tips")
         sys.exit(-1)
     nb_url = sys.argv[1]
-    nbox = pynetbox.api(url=NB_URL, token=sys.argv[2])
+    nbox = pynetbox.api(url=nb_url, token=sys.argv[2])
     #all_prefixes = nbox.ipam.prefixes.all()
     try:
         get_devs = nbox.dcim.devices.filter('gpn')

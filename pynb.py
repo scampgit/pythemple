@@ -3,14 +3,13 @@
 import pynetbox
 import sys
 
-NB_URL = "http://netbox.cloud.yandex.net/"
-
-
-
 def main():
     print(f"arg: {sys.argv} ... ")
-    
-    nbox = pynetbox.api(url=NB_URL, token=sys.argv[1])
+    if len(sys.argv) < 3: 
+        print(f"sorry, {sys.argv[0]} dorsn't have enought tips")
+        sys.exit(-1)
+    nb_url = sys.argv[1]
+    nbox = pynetbox.api(url=NB_URL, token=sys.argv[2])
     #all_prefixes = nbox.ipam.prefixes.all()
     try:
         get_devs = nbox.dcim.devices.filter('gpn')

@@ -1,2 +1,5 @@
 .vscode
 xmp
+.xmp
+__pycache__
+.cache
